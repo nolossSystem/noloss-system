@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NoLoss System - Hệ Thống Giao Dịch Dành Cho Người Mới | Kiểm Soát Rủi Ro</title>
+<meta name="description" content="NoLoss System - Hệ thống giao dịch chuyên nghiệp dành cho người mới. Kiểm soát rủi ro trước - Lợi nhuận là kết quả. Workshop thực chiến, Copytrade thủ công, đồng hành 1-1.">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+  --gold:#D4AF37;
+  --gold-light:#F4D03F;
+  --gold-dark:#A8841C;
+  --bg-dark:#0A0E1A;
+  --bg-card:#141925;
+  --bg-card-2:#1C2333;
+  --text-light:#F5F5F5;
+  --text-gray:#9CA3AF;
+  --green:#10B981;
+  --red:#EF4444;
+  --blue:#3B82F6;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Be Vietnam Pro',sans-serif;
+  background:var(--bg-dark);
+  color:var(--text-light);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+
+/* === HEADER === */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(10,14,26,0.95);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(212,175,55,0.2);
+  padding:15px 0;
+}
+.nav{display:flex;justify-content:space-between;align-items:center;}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo-icon{
+  width:40px;height:40px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;color:#000;
+}
+.logo-text{font-weight:800;font-size:18px;color:var(--gold);}
+.logo-text small{display:block;font-size:9px;color:var(--text-gray);font-weight:400;letter-spacing:1px;}
+.nav-menu{display:flex;gap:30px;list-style:none;}
+.nav-menu a{color:var(--text-light);text-decoration:none;font-weight:500;transition:.3s;}
+.nav-menu a:hover{color:var(--gold);}
+.btn-zalo{
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  color:#000;padding:10px 20px;border-radius:8px;
+  font-weight:700;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:.3s;
+}
+.btn-zalo:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(212,175,55,0.4);}
+.menu-toggle{display:none;background:none;border:none;color:var(--gold);font-size:24px;cursor:pointer;}
+
+/* === HERO === */
+.hero{
+  padding:140px 0 80px;
+  background:
+    radial-gradient(ellipse at top right, rgba(212,175,55,0.15), transparent 50%),
+    radial-gradient(ellipse at bottom left, rgba(212,175,55,0.08), transparent 50%),
+    var(--bg-dark);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(212,175,55,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(212,175,55,0.03) 1px,transparent 1px);
+  background-size:50px 50px;
+  pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center;position:relative;z-index:2;}
+.hero h1{
+  font-size:54px;font-weight:900;line-height:1.1;margin-bottom:20px;
+}
+.hero h1 .gold{
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .subtitle{font-size:20px;color:var(--text-gray);margin-bottom:30px;}
+.hero-features{display:flex;gap:25px;margin-bottom:35px;flex-wrap:wrap;}
+.hero-feature{display:flex;align-items:center;gap:10px;}
+.hero-feature i{
+  width:42px;height:42px;border-radius:8px;
+  background:rgba(212,175,55,0.15);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+}
+.hero-feature span{font-size:14px;font-weight:600;}
+.hero-feature small{display:block;font-size:12px;color:var(--text-gray);font-weight:400;}
+.hero-cta{display:flex;gap:15px;flex-wrap:wrap;}
+.btn-primary{
+  background:linear-gradient(135deg,var(--gold-light),var(--gold-dark));
+  color:#000;padding:16px 32px;border-radius:10px;
+  font-weight:800;text-decoration:none;
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:16px;transition:.3s;
+  box-shadow:0 10px 25px rgba(212,175,55,0.3);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(212,175,55,0.5);}
+.btn-outline{
+  background:transparent;color:var(--gold);
+  padding:16px 32px;border-radius:10px;
+  font-weight:700;text-decoration:none;
+  border:2px solid var(--gold);
+  display:inline-flex;align-items:center;gap:10px;
+  transition:.3s;
+}
+.btn-outline:hover{background:var(--gold);color:#000;}
+.hero-image{position:relative;}
+.hero-image .warrior{
+  width:100%;
+  filter:drop-shadow(0 20px 40px rgba(212,175,55,0.4));
+  animation:float 6s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-20px);}}
+
+/* === COUNTDOWN BAR === */
+.countdown-bar{
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold));
+  color:#000;padding:15px 0;text-align:center;font-weight:700;
+}
+.countdown-bar .timer{display:inline-flex;gap:10px;margin-left:15px;}
+.timer-box{
+  background:#000;color:var(--gold);padding:5px 12px;border-radius:6px;
+  font-family:monospace;font-size:18px;min-width:50px;
+}
+
+/* === SECTION === */
+section{padding:80px 0;}
+.section-title{text-align:center;margin-bottom:50px;}
+.section-title h2{
+  font-size:42px;font-weight:900;margin-bottom:15px;
+}
+.section-title h2 .gold{
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.section-title p{font-size:18px;color:var(--text-gray);max-width:700px;margin:0 auto;}
+
+/* === PAIN POINTS === */
+.pain-section{background:#080B14;}
+.pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;}
+.pain-item{text-align:center;padding:20px;}
+.pain-icon{
+  width:70px;height:70px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(239,68,68,0.2),rgba(239,68,68,0.05));
+  border:1px solid rgba(239,68,68,0.3);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 15px;font-size:28px;color:#EF4444;
+}
+.pain-item h4{font-size:17px;font-weight:700;margin-bottom:10px;color:var(--gold);}
+.pain-item p{font-size:14px;color:var(--text-gray);}
+.pain-cta{text-align:center;margin-top:40px;font-size:18px;}
+.pain-cta strong{color:var(--gold);}
+
+/* === SOLUTIONS === */
+.solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;}
+.solution-card{
+  background:linear-gradient(135deg,var(--bg-card),var(--bg-card-2));
+  border:1px solid rgba(212,175,55,0.2);
+  border-radius:16px;overflow:hidden;
+  transition:.4s;
+}
+.solution-card:hover{
+  transform:translateY(-10px);
+  border-color:var(--gold);
+  box-shadow:0 20px 50px rgba(212,175,55,0.2);
+}
+.solution-img{
+  height:200px;
+  background-size:cover;background-position:center;
+  position:relative;
+}
+.solution-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent,rgba(20,25,37,0.9));
+}
+.solution-content{padding:25px;}
+.solution-content h3{font-size:22px;color:var(--gold);margin-bottom:15px;display:flex;align-items:center;gap:10px;}
+.solution-content ul{list-style:none;}
+.solution-content li{padding:8px 0;display:flex;align-items:center;gap:10px;color:var(--text-light);}
+.solution-content li i{color:var(--gold);font-size:14px;}
+
+/* === STRATEGIES === */
+.strategy-section{background:#080B14;}
+.strategy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;}
+.strategy-card{
+  background:var(--bg-card);
+  border:1px solid rgba(212,175,55,0.15);
+  border-radius:16px;padding:30px;
+  position:relative;overflow:hidden;
+  transition:.4s;
+}
+.strategy-card:hover{transform:translateY(-5px);}
+.strategy-card.growth{border-top:4px solid var(--green);}
+.strategy-card.insurance{border-top:4px solid var(--blue);}
+.strategy-card.aggressive{border-top:4px solid var(--red);}
+.strategy-icon{font-size:36px;margin-bottom:15px;}
+.strategy-card.growth .strategy-icon{color:var(--green);}
+.strategy-card.insurance .strategy-icon{color:var(--blue);}
+.strategy-card.aggressive .strategy-icon{color:var(--red);}
+.strategy-card h3{font-size:24px;font-weight:800;margin-bottom:8px;}
+.strategy-card .tagline{color:var(--text-gray);margin-bottom:20px;font-size:14px;}
+.strategy-stats{
+  background:rgba(0,0,0,0.4);border-radius:10px;padding:15px;margin-bottom:20px;
+}
+.strategy-stats .number{font-size:36px;font-weight:900;}
+.strategy-card.growth .number{color:var(--green);}
+.strategy-card.insurance .number{color:var(--blue);}
+.strategy-card.aggressive .number{color:var(--red);}
+.strategy-stats small{color:var(--text-gray);font-size:13px;}
+.strategy-stats .share{display:block;margin-top:8px;color:var(--gold);font-weight:600;font-size:14px;}
+.strategy-card ul{list-style:none;margin-bottom:20px;}
+.strategy-card li{padding:6px 0;display:flex;align-items:center;gap:10px;font-size:14px;}
+.strategy-card li i{font-size:12px;}
+.strategy-card.growth li i{color:var(--green);}
+.strategy-card.insurance li i{color:var(--blue);}
+.strategy-card.aggressive li i{color:var(--red);}
+.btn-strategy{
+  display:block;width:100%;padding:14px;border-radius:10px;
+  text-align:center;font-weight:700;text-decoration:none;
+  border:none;cursor:pointer;transition:.3s;color:#fff;
+}
+.btn-strategy.growth{background:var(--green);}
+.btn-strategy.insurance{background:var(--blue);}
+.btn-strategy.aggressive{background:var(--red);}
+.btn-strategy:hover{filter:brightness(1.1);transform:translateY(-2px);}
+.disclaimer{text-align:center;color:var(--text-gray);font-size:13px;margin-top:25px;font-style:italic;}
+
+/* === ROADMAP (Lộ trình) === */
+.roadmap{position:relative;}
+.roadmap-line{
+  position:absolute;left:50%;top:60px;bottom:60px;width:2px;
+  background:linear-gradient(180deg,transparent,var(--gold),transparent);
+}
+.roadmap-step{
+  display:grid;grid-template-columns:1fr 100px 1fr;
+  gap:30px;align-items:center;margin-bottom:40px;
+}
+.roadmap-step:nth-child(even) .roadmap-content{grid-column:3;text-align:left;}
+.roadmap-step:nth-child(even) .roadmap-spacer{grid-column:1;}
+.roadmap-content{
+  background:var(--bg-card);
+  border:1px solid rgba(212,175,55,0.2);
+  border-radius:12px;padding:25px;
+  text-align:right;
+}
+.roadmap-content h4{color:var(--gold);font-size:20px;margin-bottom:10px;}
+.roadmap-content p{color:var(--text-gray);font-size:14px;}
+.roadmap-num{
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  display:flex;align-items:center;justify-content:center;
+  font-size:32px;font-weight:900;color:#000;
+  margin:0 auto;border:5px solid var(--bg-dark);
+  position:relative;z-index:2;
+  box-shadow:0 0 30px rgba(212,175,55,0.5);
+}
+
+/* === TESTIMONIALS === */
+.testimonial-section{background:#080B14;}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;}
+.testimonial-card{
+  background:var(--bg-card);
+  border:1px solid rgba(212,175,55,0.15);
+  border-radius:16px;padding:30px;
+  position:relative;
+}
+.testimonial-card::before{
+  content:'\f10d';font-family:'Font Awesome 6 Free';font-weight:900;
+  position:absolute;top:20px;right:25px;
+  color:var(--gold);opacity:0.3;font-size:30px;
+}
+.testimonial-stars{color:var(--gold);margin-bottom:15px;}
+.testimonial-text{font-style:italic;color:var(--text-light);margin-bottom:20px;line-height:1.7;}
+.testimonial-author{display:flex;align-items:center;gap:15px;}
+.author-avatar{
+  width:55px;height:55px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;color:#000;font-size:20px;
+}
+.author-info h5{font-size:16px;color:var(--gold);}
+.author-info small{color:var(--text-gray);font-size:13px;}
+
+/* === STATS === */
+.stats-section{
+  background:linear-gradient(135deg,var(--bg-card),#0F1320);
+  padding:60px 0;
+}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center;}
+.stat-item .number{
+  font-size:48px;font-weight:900;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.stat-item .label{color:var(--text-gray);font-size:14px;margin-top:5px;}
+
+/* === FAQ === */
+.faq-list{max-width:850px;margin:0 auto;}
+.faq-item{
+  background:var(--bg-card);
+  border:1px solid rgba(212,175,55,0.15);
+  border-radius:12px;margin-bottom:15px;overflow:hidden;
+  transition:.3s;
+}
+.faq-item.active{border-color:var(--gold);}
+.faq-question{
+  padding:20px 25px;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  font-weight:600;font-size:17px;
+}
+.faq-question i{transition:.3s;color:var(--gold);}
+.faq-item.active .faq-question i{transform:rotate(180deg);}
+.faq-answer{max-height:0;overflow:hidden;transition:.4s;color:var(--text-gray);}
+.faq-answer-inner{padding:0 25px 20px;line-height:1.7;}
+.faq-item.active .faq-answer{max-height:300px;}
+
+/* === COMMUNITY === */
+.community-section{
+  background:linear-gradient(135deg,#0F1729,#1A1F35);
+  padding:80px 0;
+}
+.community-grid{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:30px;align-items:center;}
+.community-side h3{color:var(--gold);font-size:22px;margin-bottom:20px;text-align:center;}
+.community-side ul{list-style:none;}
+.community-side li{padding:10px 0;display:flex;align-items:center;gap:12px;}
+.community-side li i{color:var(--gold);}
+.community-center{
+  background:var(--bg-card);
+  border:1px solid var(--gold);
+  border-radius:16px;padding:35px;text-align:center;
+  box-shadow:0 0 50px rgba(212,175,55,0.2);
+}
+.tg-icon{
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,#0088cc,#005580);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;font-size:40px;color:#fff;
+}
+.community-center h3{font-size:24px;color:var(--gold);margin-bottom:10px;}
+.community-center p{color:var(--text-gray);margin-bottom:20px;}
+.tg-preview{
+  background:#1a2332;border-radius:10px;padding:15px;text-align:left;
+  margin-bottom:20px;border-left:3px solid var(--gold);
+}
+.tg-preview .head{display:flex;justify-content:space-between;color:var(--text-gray);font-size:12px;margin-bottom:5px;}
+.tg-preview .title{color:var(--gold);font-weight:700;font-size:14px;}
+.tg-preview .body{color:#e0e0e0;font-size:13px;font-family:monospace;line-height:1.6;}
+.btn-tg{
+  background:linear-gradient(135deg,#0088cc,#0066aa);
+  color:#fff;padding:14px 30px;border-radius:10px;
+  font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:10px;
+  transition:.3s;
+}
+.btn-tg:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,136,204,0.4);}
+
+/* === FORM === */
+.form-section{
+  background:linear-gradient(135deg,#1F1A0A,#2D2410);
+  padding:80px 0;border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);
+}
+.form-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:center;}
+.form-grid h2{font-size:38px;font-weight:900;margin-bottom:15px;}
+.form-grid h2 .gold{color:var(--gold);}
+.form-grid p{color:var(--text-gray);font-size:16px;}
+.form-card{
+  background:var(--bg-card);
+  border:1px solid var(--gold);
+  border-radius:16px;padding:35px;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:15px;}
+.form-group{margin-bottom:15px;}
+.form-group label{display:block;margin-bottom:8px;color:var(--gold);font-weight:600;font-size:14px;}
+.form-group input,.form-group select{
+  width:100%;padding:12px 15px;border-radius:8px;
+  background:#0A0E1A;border:1px solid rgba(212,175,55,0.3);
+  color:#fff;font-family:inherit;font-size:15px;
+  transition:.3s;
+}
+.form-group input:focus,.form-group select:focus{
+  outline:none;border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(212,175,55,0.15);
+}
+.form-card .btn-primary{width:100%;justify-content:center;font-size:17px;padding:16px;}
+.form-note{text-align:center;color:var(--text-gray);font-size:12px;margin-top:15px;}
+
+/* === FOOTER === */
+.footer{background:#06080F;padding:60px 0 20px;border-top:1px solid rgba(212,175,55,0.15);}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:30px;margin-bottom:40px;}
+.footer h4{color:var(--gold);font-size:16px;margin-bottom:15px;}
+.footer ul{list-style:none;}
+.footer li{padding:5px 0;}
+.footer a{color:var(--text-gray);text-decoration:none;font-size:14px;transition:.3s;}
+.footer a:hover{color:var(--gold);}
+.footer-social{display:flex;gap:10px;margin-top:10px;}
+.footer-social a{
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(212,175,55,0.15);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold);font-size:16px;transition:.3s;
+}
+.footer-social a:hover{background:var(--gold);color:#000;}
+.footer-bottom{
+  text-align:center;color:var(--text-gray);font-size:13px;
+  border-top:1px solid rgba(212,175,55,0.1);padding-top:20px;
+}
+
+/* === FLOATING CTA === */
+.floating-cta{
+  position:fixed;bottom:20px;right:20px;z-index:999;
+  display:flex;flex-direction:column;gap:10px;
+}
+.float-btn{
+  width:60px;height:60px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;text-decoration:none;color:#fff;
+  box-shadow:0 5px 20px rgba(0,0,0,0.4);
+  transition:.3s;animation:pulse 2s infinite;
+}
+.float-btn.zalo{background:#0068FF;}
+.float-btn.tg{background:#0088cc;}
+.float-btn:hover{transform:scale(1.1);}
+@keyframes pulse{0%,100%{box-shadow:0 5px 20px rgba(0,104,255,0.5);}50%{box-shadow:0 5px 30px rgba(0,104,255,0.9);}}
+
+/* === RESPONSIVE === */
+@media(max-width:900px){
+  .nav-menu{display:none;}
+  .menu-toggle{display:block;}
+  .hero-grid,.form-grid,.community-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:36px;}
+  .pain-grid,.solutions-grid,.strategy-grid,.testimonial-grid,.stats-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .roadmap-line{display:none;}
+  .roadmap-step{grid-template-columns:1fr;text-align:center;}
+  .roadmap-content{text-align:center !important;}
+  .roadmap-step:nth-child(even) .roadmap-content{grid-column:1;}
+  .section-title h2{font-size:30px;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container nav">
+    <div class="logo">
+      <div class="logo-icon">N</div>
+      <div class="logo-text">NOLOSS SYSTEM<small>RISK CONTROLLED · GROWTH DRIVEN</small></div>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="#home">Trang chủ</a></li>
+      <li><a href="#solutions">Hệ thống</a></li>
+      <li><a href="#strategy">Chiến lược</a></li>
+      <li><a href="#roadmap">Lộ trình</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#contact" class="btn-zalo"><i class="fas fa-comment-dots"></i> TƯ VẤN QUA ZALO</a>
+    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
+
+<!-- COUNTDOWN BAR -->
+<div class="countdown-bar" style="margin-top:70px;">
+  🔥 ƯU ĐÃI ĐẶC BIỆT THÁNG NÀY: Tặng 1 tháng Copytrade miễn phí - Còn lại
+  <span class="timer">
+    <span class="timer-box" id="d">02</span>
+    <span class="timer-box" id="h">14</span>
+    <span class="timer-box" id="m">35</span>
+    <span class="timer-box" id="s">22</span>
+  </span>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <h1>HỆ THỐNG GIAO DỊCH<br>DÀNH CHO <span class="gold">NGƯỜI MỚI</span></h1>
+      <p class="subtitle">Kiểm soát rủi ro trước - Lợi nhuận là kết quả</p>
+      <div class="hero-features">
+        <div class="hero-feature">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <div><span>Workshop</span><small>thực chiến</small></div>
+        </div>
+        <div class="hero-feature">
+          <i class="fas fa-laptop-code"></i>
+          <div><span>Copytrade</span><small>thủ công</small></div>
+        </div>
+        <div class="hero-feature">
+          <i class="fas fa-user-friends"></i>
+          <div><span>Đồng hành</span><small>1-1</small></div>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary"><i class="fas fa-comment-dots"></i> NHẬN TƯ VẤN QUA ZALO</a>
+        <a href="#solutions" class="btn-outline"><i class="fas fa-play-circle"></i> XEM CÁCH HOẠT ĐỘNG</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <svg class="warrior" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="goldGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#F4D03F"/>
+            <stop offset="100%" style="stop-color:#A8841C"/>
+          </radialGradient>
+          <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#2C3E50"/>
+            <stop offset="100%" style="stop-color:#0A0E1A"/>
+          </linearGradient>
+        </defs>
+        <!-- Glow circle -->
+        <circle cx="250" cy="250" r="200" fill="url(#goldGrad)" opacity="0.15"/>
+        <circle cx="250" cy="250" r="180" fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.4" stroke-dasharray="5,5"/>
+        <!-- Shield -->
+        <path d="M250 100 L370 150 Q370 320 250 400 Q130 320 130 150 Z" fill="url(#shieldGrad)" stroke="#D4AF37" stroke-width="4"/>
+        <!-- Chart bars inside shield -->
+        <rect x="170" y="280" width="20" height="60" fill="#10B981"/>
+        <rect x="200" y="240" width="20" height="100" fill="#10B981"/>
+        <rect x="230" y="210" width="20" height="130" fill="#D4AF37"/>
+        <rect x="260" y="180" width="20" height="160" fill="#D4AF37"/>
+        <rect x="290" y="150" width="20" height="190" fill="#F4D03F"/>
+        <!-- Trend arrow -->
+        <path d="M160 290 L320 130" stroke="#F4D03F" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <polygon points="320,130 305,135 315,150" fill="#F4D03F"/>
+        <!-- Helmet on top -->
+        <path d="M210 100 Q250 70 290 100 L280 130 Q250 115 220 130 Z" fill="url(#goldGrad)" stroke="#A8841C" stroke-width="2"/>
+        <path d="M250 65 Q260 50 270 65 L265 90 Q255 80 245 90 Z" fill="#D4AF37"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>BẠN CÓ ĐANG <span class="gold">GẶP?</span></h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-item">
+        <div class="pain-icon"><i class="fas fa-brain"></i></div>
+        <h4>TRADE THEO CẢM XÚC</h4>
+        <p>Dễ FOMO, gồng lỗ, vào lệnh không kế hoạch</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon"><i class="fas fa-chart-line"></i></div>
+        <h4>KHÔNG CÓ HỆ THỐNG</h4>
+        <p>Không có chiến lược rõ ràng, trade theo cảm tính</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon"><i class="far fa-frown"></i></div>
+        <h4>THUA LỖ LIÊN TỤC</h4>
+        <p>Tài khoản bào mòn, mất niềm tin vào thị trường</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon"><i class="fas fa-shield-alt"></i></div>
+        <h4>KHÔNG KIỂM SOÁT RỦI RO</h4>
+        <p>Không đặt stoploss, không quản lý vốn</p>
+      </div>
+    </div>
+    <p class="pain-cta">Nếu bạn gặp 1 trong những điều trên, <strong>hệ thống này được tạo ra để giúp bạn.</strong></p>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section id="solutions">
+  <div class="container">
+    <div class="section-title">
+      <h2>GIẢI PHÁP CỦA <span class="gold">NOLOSS SYSTEM</span></h2>
+      <p>3 hệ thống đào tạo và đồng hành toàn diện - Phù hợp cho mọi cấp độ người mới</p>
+    </div>
+    <div class="solutions-grid">
+      <div class="solution-card">
+        <div class="solution-img" style="background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center;">
+          <i class="fas fa-chalkboard-teacher" style="font-size:80px;color:var(--gold);opacity:0.4;"></i>
+        </div>
+        <div class="solution-content">
+          <h3><i class="fas fa-users"></i> WORKSHOP OFFLINE</h3>
+          <ul>
+            <li><i class="fas fa-check-circle"></i> 30 người / buổi</li>
+            <li><i class="fas fa-check-circle"></i> Học thực chiến</li>
+            <li><i class="fas fa-check-circle"></i> Hỏi đáp trực tiếp</li>
+          </ul>
+        </div>
+      </div>
+      <div class="solution-card">
+        <div class="solution-img" style="background:linear-gradient(135deg,#0f3460,#16213e);display:flex;align-items:center;justify-content:center;">
+          <i class="fas fa-video" style="font-size:80px;color:var(--gold);opacity:0.4;"></i>
+        </div>
+        <div class="solution-content">
+          <h3><i class="fas fa-broadcast-tower"></i> WEBINAR ONLINE</h3>
+          <ul>
+            <li><i class="fas fa-check-circle"></i> Học mọi lúc, mọi nơi</li>
+            <li><i class="fas fa-check-circle"></i> Cập nhật chiến lược mới</li>
+            <li><i class="fas fa-check-circle"></i> Có record xem lại</li>
+          </ul>
+        </div>
+      </div>
+      <div class="solution-card">
+        <div class="solution-img" style="background:linear-gradient(135deg,#533483,#0f3460);display:flex;align-items:center;justify-content:center;">
+          <i class="fas fa-mobile-alt" style="font-size:80px;color:var(--gold);opacity:0.4;"></i>
+        </div>
+        <div class="solution-content">
+          <h3><i class="fas fa-copy"></i> COPYTRADE THỦ CÔNG</h3>
+          <ul>
+            <li><i class="fas fa-check-circle"></i> Giao dịch bằng tay</li>
+            <li><i class="fas fa-check-circle"></i> Kiểm soát rủi ro chặt chẽ</li>
+            <li><i class="fas fa-check-circle"></i> Minh bạch, rõ ràng</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGIES -->
+<section id="strategy" class="strategy-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>CÁC CHIẾN LƯỢC <span class="gold">(MASTER)</span></h2>
+      <p>Lựa chọn chiến lược phù hợp với khẩu vị rủi ro và mục tiêu lợi nhuận của bạn</p>
+    </div>
+    <div class="strategy-grid">
+      <div class="strategy-card growth">
+        <div class="strategy-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>MASTER GROWTH</h3>
+        <p class="tagline">Tăng trưởng bền vững</p>
+        <div class="strategy-stats">
+          <div class="number">~20%<small> / tháng</small></div>
+          <span class="share">Chia 30% lợi nhuận</span>
+        </div>
+        <ul>
+          <li><i class="fas fa-check"></i> Lợi nhuận ổn định</li>
+          <li><i class="fas fa-check"></i> Rủi ro trung bình</li>
+          <li><i class="fas fa-check"></i> Phù hợp người mới</li>
+        </ul>
+        <a href="#contact" class="btn-strategy growth">TƯ VẤN CHIẾN LƯỢC NÀY</a>
+      </div>
+      <div class="strategy-card insurance">
+        <div class="strategy-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>MASTER INSURANCE</h3>
+        <p class="tagline">Bảo toàn vốn</p>
+        <div class="strategy-stats">
+          <div class="number">Chia 50%<small> lợi nhuận</small></div>
+          <span class="share">Bảo hiểm vốn 100%</span>
+        </div>
+        <ul>
+          <li><i class="fas fa-check"></i> Rủi ro thấp</li>
+          <li><i class="fas fa-check"></i> Giữ vốn là ưu tiên</li>
+          <li><i class="fas fa-check"></i> Phù hợp nhà đầu tư thận trọng</li>
+        </ul>
+        <a href="#contact" class="btn-strategy insurance">TƯ VẤN CHIẾN LƯỢC NÀY</a>
+      </div>
+      <div class="strategy-card aggressive">
+        <div class="strategy-icon"><i class="fas fa-rocket"></i></div>
+        <h3>MASTER AGGRESSIVE</h3>
+        <p class="tagline">Tăng tốc lợi nhuận</p>
+        <div class="strategy-stats">
+          <div class="number">~30%<small> / tháng</small></div>
+          <span class="share">Chia 10% lợi nhuận</span>
+        </div>
+        <ul>
+          <li><i class="fas fa-check"></i> Lợi nhuận cao hơn</li>
+          <li><i class="fas fa-check"></i> Rủi ro cao hơn</li>
+          <li><i class="fas fa-check"></i> Phù hợp nhà đầu tư mạo hiểm</li>
+        </ul>
+        <a href="#contact" class="btn-strategy aggressive">TƯ VẤN CHIẾN LƯỢC NÀY</a>
+      </div>
+    </div>
+    <p class="disclaimer">* Hiệu suất trong quá khứ không phản ánh đảm bảo kết quả tương lai.</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="number" data-count="500">500+</div>
+        <div class="label">Học viên đã đào tạo</div>
+      </div>
+      <div class="stat-item">
+        <div class="number" data-count="3">3+</div>
+        <div class="label">Năm kinh nghiệm thị trường</div>
+      </div>
+      <div class="stat-item">
+        <div class="number" data-count="92">92%</div>
+        <div class="label">Học viên có lãi sau 3 tháng</div>
+      </div>
+      <div class="stat-item">
+        <div class="number" data-count="24">24/7</div>
+        <div class="label">Hỗ trợ đồng hành</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="container">
+    <div class="section-title">
+      <h2>LỘ TRÌNH <span class="gold">4 BƯỚC</span> ĐẾN THÀNH CÔNG</h2>
+      <p>Từ người mới hoàn toàn đến nhà đầu tư có hệ thống chỉ trong 30 ngày</p>
+    </div>
+    <div class="roadmap">
+      <div class="roadmap-line"></div>
+      <div class="roadmap-step">
+        <div class="roadmap-content">
+          <h4>NHẬN TƯ VẤN MIỄN PHÍ</h4>
+          <p>Liên hệ Zalo, được tư vấn 1-1 về tình trạng hiện tại và lộ trình phù hợp</p>
+        </div>
+        <div class="roadmap-num">1</div>
+        <div class="roadmap-spacer"></div>
+      </div>
+      <div class="roadmap-step">
+        <div class="roadmap-spacer"></div>
+        <div class="roadmap-num">2</div>
+        <div class="roadmap-content">
+          <h4>HỌC HỆ THỐNG QUA WORKSHOP</h4>
+          <p>Tham gia workshop offline/online, nắm vững nguyên tắc kiểm soát rủi ro</p>
+        </div>
+      </div>
+      <div class="roadmap-step">
+        <div class="roadmap-content">
+          <h4>THỰC CHIẾN COPYTRADE</h4>
+          <p>Áp dụng vào tài khoản thật với sự đồng hành 1-1 từ Master</p>
+        </div>
+        <div class="roadmap-num">3</div>
+        <div class="roadmap-spacer"></div>
+      </div>
+      <div class="roadmap-step">
+        <div class="roadmap-spacer"></div>
+        <div class="roadmap-num">4</div>
+        <div class="roadmap-content">
+          <h4>ĐỘC LẬP & PHÁT TRIỂN</h4>
+          <p>Tự giao dịch với hệ thống đã được rèn luyện - Lợi nhuận bền vững</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonial-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>HỌC VIÊN <span class="gold">NÓI GÌ?</span></h2>
+      <p>Hàng trăm học viên đã thay đổi cách đầu tư nhờ NoLoss System</p>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Trước đây tôi thua lỗ 200 triệu vì trade theo cảm xúc. Sau 2 tháng học NoLoss System, tôi đã hồi vốn và lãi đều 15-20%/tháng. Quan trọng nhất là tôi đã ngủ ngon."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">M</div>
+          <div class="author-info"><h5>Anh Minh, 32 tuổi</h5><small>Nhân viên văn phòng - Hà Nội</small></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Mình là dân tay mơ, không biết gì về trading. Master đồng hành 1-1 từng lệnh, giải thích rõ vì sao vào, vì sao ra. Sau 3 tháng mình đã tự giao dịch được với tỷ lệ thắng 70%."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">L</div>
+          <div class="author-info"><h5>Chị Linh, 28 tuổi</h5><small>Kinh doanh tự do - TP.HCM</small></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Điều khác biệt của NoLoss là đặt RỦI RO lên đầu. Stoploss luôn rõ ràng, không bao giờ all-in. Đó là lý do tôi yên tâm gắn bó lâu dài với hệ thống này."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">T</div>
+          <div class="author-info"><h5>Anh Tuấn, 40 tuổi</h5><small>Doanh nhân - Đà Nẵng</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="community-section">
+  <div class="container community-grid">
+    <div class="community-side">
+      <h3>HOẠT ĐỘNG THỰC TẾ</h3>
+      <ul>
+        <li><i class="fas fa-camera"></i> Workshop offline định kỳ</li>
+        <li><i class="fas fa-handshake"></i> Buổi trao đổi thực chiến</li>
+        <li><i class="fas fa-graduation-cap"></i> Đào tạo chuyên sâu</li>
+        <li><i class="fas fa-users"></i> Cộng đồng 500+ học viên</li>
+      </ul>
+    </div>
+    <div class="community-center">
+      <div class="tg-icon"><i class="fab fa-telegram-plane"></i></div>
+      <h3>CỘNG ĐỒNG TELEGRAM</h3>
+      <p>Cập nhật tín hiệu mỗi ngày · Phân tích thị trường · Minh bạch - Kỷ luật</p>
+      <div class="tg-preview">
+        <div class="head"><span class="title">📊 NoLoss System Channel</span><span>10:15 AM</span></div>
+        <div class="body">XAUUSD Buy 2345.50<br>SL: 2338.00 | TP1: 2355.00 | TP2: 2365.00<br>Quản lý vốn: 2% mỗi lệnh!</div>
+      </div>
+      <a href="#contact" class="btn-tg"><i class="fab fa-telegram-plane"></i> THAM GIA TELEGRAM</a>
+    </div>
+    <div class="community-side">
+      <h3>NGUYÊN TẮC CỐT LÕI</h3>
+      <ul>
+        <li><i class="fas fa-shield-alt"></i> Ưu tiên bảo toàn vốn</li>
+        <li><i class="fas fa-balance-scale"></i> Giới hạn rủi ro theo hệ thống</li>
+        <li><i class="fas fa-coins"></i> Quản lý vốn khoa học</li>
+        <li><i class="fas fa-ban"></i> Không all-in, không gồng lỗ</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-title">
+      <h2>CÂU HỎI <span class="gold">THƯỜNG GẶP</span></h2>
+      <p>Giải đáp những băn khoăn phổ biến của người mới trước khi bắt đầu</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">Tôi hoàn toàn mới, chưa biết gì về đầu tư - có học được không?<i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Hoàn toàn được! NoLoss System được thiết kế đặc biệt cho người mới. Chúng tôi bắt đầu từ những kiến thức nền tảng nhất, kèm cặp 1-1 trong giai đoạn đầu để bạn không bị lạc lối.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Cần vốn tối thiểu bao nhiêu để bắt đầu?<i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Bạn có thể bắt đầu với số vốn nhỏ từ 10-30 triệu để làm quen. Mục tiêu giai đoạn đầu là HỌC HỆ THỐNG và RÈN KỶ LUẬT, không phải lợi nhuận. Khi đã có hệ thống vững, bạn mới tăng vốn.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Lợi nhuận 20-30%/tháng có thật không? Có cam kết không?<i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Đây là hiệu suất TRUNG BÌNH dựa trên track record của Master. Chúng tôi KHÔNG cam kết lợi nhuận - vì đầu tư luôn có rủi ro. Cam kết duy nhất là HỆ THỐNG KIỂM SOÁT RỦI RO và đồng hành minh bạch.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Khác gì so với các nhóm tín hiệu (signal) khác?<i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Chúng tôi KHÔNG bán tín hiệu. NoLoss System dạy bạn HỆ THỐNG để tự ra quyết định - đó là khác biệt cốt lõi. Sau khóa học bạn có thể độc lập, không phụ thuộc vào ai.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Nếu thua lỗ thì sao? Có hoàn tiền không?<i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Master Insurance có chính sách bảo toàn vốn rõ ràng. Đối với học phí workshop, chúng tôi có chính sách dùng thử 7 ngày - không hài lòng được hoàn lại 100%.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Tôi đi làm bận rộn, có thời gian học không?<i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Hoàn toàn được. Webinar có record xem lại bất cứ lúc nào. Copytrade chỉ cần 15-30 phút/ngày để đặt lệnh theo hướng dẫn. Hệ thống được tối ưu cho người đi làm.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section" id="contact">
+  <div class="container form-grid">
+    <div>
+      <h2>BẮT ĐẦU HÀNH TRÌNH<br><span class="gold">ĐẦU TƯ ĐÚNG CÁCH</span></h2>
+      <p>Đừng để mất thêm tiền vì sai phương pháp! Để lại thông tin, đội ngũ NoLoss sẽ liên hệ tư vấn miễn phí 1-1 trong vòng 30 phút.</p>
+      <div style="margin-top:25px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;"><i class="fas fa-check-circle" style="color:var(--gold);"></i> Tư vấn 100% miễn phí</div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;"><i class="fas fa-check-circle" style="color:var(--gold);"></i> Bảo mật thông tin tuyệt đối</div>
+        <div style="display:flex;align-items:center;gap:12px;"><i class="fas fa-check-circle" style="color:var(--gold);"></i> Lộ trình cá nhân hóa</div>
+      </div>
+    </div>
+    <div class="form-card">
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Họ và tên *</label>
+            <input type="text" required placeholder="Nguyễn Văn A">
+          </div>
+          <div class="form-group">
+            <label>Số điện thoại *</label>
+            <input type="tel" required placeholder="0912 345 678">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Bạn đã từng trade chưa?</label>
+          <select>
+            <option>Hoàn toàn mới - chưa từng trade</option>
+            <option>Đã trade nhưng thua lỗ</option>
+            <option>Có lãi nhưng chưa ổn định</option>
+            <option>Đang tìm hệ thống mới</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Vốn dự kiến đầu tư</label>
+          <select>
+            <option>Dưới 10 triệu</option>
+            <option>10 - 50 triệu</option>
+            <option>50 - 200 triệu</option>
+            <option>Trên 200 triệu</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> NHẬN TƯ VẤN NGAY</button>
+        <p class="form-note">🔒 Thông tin của bạn được bảo mật tuyệt đối</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">
+          <div class="logo-icon">N</div>
+          <div class="logo-text">NOLOSS SYSTEM<small>RISK CONTROLLED · GROWTH DRIVEN</small></div>
+        </div>
+        <p style="color:var(--text-gray);font-size:13px;margin-top:15px;">NoLoss System là hệ thống giao dịch được xây dựng dành riêng cho người mới bắt đầu, tập trung vào kiểm soát rủi ro và phát triển tài khoản bền vững.</p>
+      </div>
+      <div>
+        <h4>LIÊN KẾT NHANH</h4>
+        <ul>
+          <li><a href="#home">Trang chủ</a></li>
+          <li><a href="#solutions">Hệ thống</a></li>
+          <li><a href="#strategy">Chiến lược</a></li>
+          <li><a href="#roadmap">Lộ trình</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>HỖ TRỢ</h4>
+        <ul>
+          <li><a href="#faq">Câu hỏi thường gặp</a></li>
+          <li><a href="#">Điều khoản</a></li>
+          <li><a href="#">Chính sách bảo mật</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>LIÊN HỆ</h4>
+        <ul>
+          <li><a href="#"><i class="fas fa-comment-dots"></i> Tư vấn qua Zalo</a></li>
+          <li><a href="#"><i class="far fa-envelope"></i> <span class="__cf_email__" data-cfemail="582b2d2828372a2c18363734372b2b762e36">[email&#160;protected]</span></a></li>
+          <li><a href="#"><i class="fab fa-telegram"></i> @noloss_support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>THEO DÕI CHÚNG TÔI</h4>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 NoLoss System. All rights reserved. | Đầu tư có rủi ro - Vui lòng cân nhắc kỹ trước khi tham gia.
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta">
+  <a href="#contact" class="float-btn zalo" title="Zalo"><i class="fas fa-comment-dots"></i></a>
+  <a href="#contact" class="float-btn tg" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// FAQ toggle
+document.querySelectorAll('.faq-question').forEach(q=>{
+  q.addEventListener('click',()=>{
+    q.parentElement.classList.toggle('active');
+  });
+});
+
+// Countdown
+function startTimer(){
+  let total = 2*86400 + 14*3600 + 35*60 + 22;
+  setInterval(()=>{
+    total--;
+    if(total<0) total = 3*86400;
+    const d = Math.floor(total/86400);
+    const h = Math.floor((total%86400)/3600);
+    const m = Math.floor((total%3600)/60);
+    const s = total%60;
+    document.getElementById('d').textContent = String(d).padStart(2,'0');
+    document.getElementById('h').textContent = String(h).padStart(2,'0');
+    document.getElementById('m').textContent = String(m).padStart(2,'0');
+    document.getElementById('s').textContent = String(s).padStart(2,'0');
+  },1000);
+}
+startTimer();
+
+// Form submit
+function handleSubmit(e){
+  e.preventDefault();
+  alert('✅ Cảm ơn bạn! Đội ngũ NoLoss System sẽ liên hệ trong vòng 30 phút.');
+  e.target.reset();
+}
+
+// Mobile menu
+document.querySelector('.menu-toggle').addEventListener('click',()=>{
+  const menu = document.querySelector('.nav-menu');
+  menu.style.display = menu.style.display==='flex'?'none':'flex';
+  menu.style.position='absolute';
+  menu.style.top='70px';
+  menu.style.right='20px';
+  menu.style.flexDirection='column';
+  menu.style.background='var(--bg-card)';
+  menu.style.padding='20px';
+  menu.style.borderRadius='10px';
+  menu.style.border='1px solid var(--gold)';
+});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
